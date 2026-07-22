@@ -41,3 +41,10 @@ test/fixtures/pglite-snapshot.version
 
 # Private brain reports — never check these in (per CLAUDE.md privacy rule)
 reports/network-intelligence/
+
+# Local brain state if `gbrain init --pglite` is ever run inside this checkout.
+# The default brain lives at ~/.gbrain, but guard against an in-repo .gbrain/
+# (PGLite db files, config.json with connection strings/keys) landing in git.
+.gbrain/
+*.pglite
+*.pglite-*
